@@ -13,7 +13,7 @@ Install LaTeX on you system. Make sure the commands `pdflatex`, `bibtex` and `la
 ### User Installation
 from a terminal launch
 ```
-ruppena@tungdil:~$ sudo pip install seriesManagementSystem
+ruppena@tungdil:~$ sudo pip install git+https://github.com/DurandA/seriesManagementSystem
 ```
 this will compile and install the project to the Python libraries (eg. `/usr/local/lib/python2.7/dist-packages/Series_Management_System-1.1-py2.7.egg`). Furthermore it will install a script in `/usr/local/bin/`:
 * seriesManagementSystem
@@ -22,7 +22,7 @@ The configuration and logging.conf are copied into `/etc/SeriesManagementSystem/
 ### Developer Installation
 from a terminal launch
 ```
-ruppena@tungdil:~$ git clone https://github.com/digsim/seriesManagementSystem.git
+ruppena@tungdil:~$ git clone https://github.com/DurandA/seriesManagementSystem
 ruppena@tungdil:~$ cd seriesManagementSystem
 ruppena@tungdil:~$ sudo python setup.py install --record files.txt
 ```
