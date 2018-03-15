@@ -6,6 +6,21 @@ Series are defined using `cfg` files, one for each series. The `cfg` files conta
 
 ## Installation
 
+### Using Docker
+
+The tool can be used with docker. The easiest way to do it is by pulling the docker image (assuming Docker is installed):
+```
+ruppena@tungdil:~$ docker pull diuf/series-management-system
+```
+And once in the directory containing the series:
+```
+ruppena@tungdil:~$ docker run -v $(pwd):/seriesManagementSystem -u $( id -u $USER ):$( id -g $USER) diuf/series-management-system seriesManagementSystem [args]
+```
+In order to build the series 00:
+```
+ruppena@tungdil:~$ docker run -v $(pwd):/seriesManagementSystem -u $( id -u $USER ):$( id -g $USER) diuf/series-management-system seriesManagementSystem --build-serie -s 00
+```
+
 ### Requirements
 
 Install LaTeX on you system. Make sure the commands `pdflatex`, `bibtex` and `latexmk` are available on the `$PATH` of your operating system. Furthermore the script sometimes uses either `gs` or `pdftk` (configurable, see `usepdftk` option) to combine several PDF documents.
@@ -13,7 +28,7 @@ Install LaTeX on you system. Make sure the commands `pdflatex`, `bibtex` and `la
 ### User Installation
 from a terminal launch
 ```
-ruppena@tungdil:~$ sudo pip install git+https://github.com/DurandA/seriesManagementSystem
+ruppena@tungdil:~$ sudo pip install git+https://github.com/polchky/seriesManagementSystem
 ```
 this will compile and install the project to the Python libraries (eg. `/usr/local/lib/python2.7/dist-packages/Series_Management_System-1.1-py2.7.egg`). Furthermore it will install a script in `/usr/local/bin/`:
 * seriesManagementSystem
@@ -22,7 +37,7 @@ The configuration and logging.conf are copied into `/etc/SeriesManagementSystem/
 ### Developer Installation
 from a terminal launch
 ```
-ruppena@tungdil:~$ git clone https://github.com/DurandA/seriesManagementSystem
+ruppena@tungdil:~$ git clone https://github.com/polchky/seriesManagementSystem
 ruppena@tungdil:~$ cd seriesManagementSystem
 ruppena@tungdil:~$ sudo python setup.py install --record files.txt
 ```
