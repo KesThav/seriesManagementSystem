@@ -8,11 +8,8 @@ Series are defined using `cfg` files, one for each series. The `cfg` files conta
 
 ### Using Docker
 
-The tool can be used with docker. The easiest way to do it is by pulling the docker image (assuming Docker is installed):
-```
-ruppena@tungdil:~$ docker pull diuf/series-management-system
-```
-And once in the directory containing the series:
+The tool can be used with docker, without any other dependencies.
+Once in the directory containing the series, simply run:
 ```
 ruppena@tungdil:~$ docker run -v $(pwd):/seriesManagementSystem -u $( id -u $USER ):$( id -g $USER) diuf/series-management-system seriesManagementSystem [args]
 ```
